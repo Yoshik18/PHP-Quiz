@@ -1,6 +1,11 @@
 <?php require("./includes/header.php") ?>
-<?php session_start(); ?>
+<?php 
+    $admin_mail = "Enter your mail";
+    $score = $_SESSION['score'];
 
+    mail($admin_mail, 'PHP QUIZ', 'Score of recent\'s game is '.$score);
+
+?>
 
 <div class="container text-center mt-3">
     <div class="jumbotron">

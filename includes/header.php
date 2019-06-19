@@ -1,5 +1,6 @@
 <?php include 'db.php' ?>
 
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -30,9 +31,18 @@
         </button>
 
         <div class="collapse navbar-collapse" id="navbarColor01">
+       
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item"><a href="/php quiz/add-question.php">Add Question</a> </li>
+          <?php if(isset($_SESSION['user'])): ?>
+            <li class="nav-item mr-4"><a href="/php quiz/add-question.php">Add Question</a> </li>
+            <li class="nav-item"><a href="/php quiz/logout.php?logout">Logout</a> </li>
+          <?php endif; ?>
+          <?php if(!isset($_SESSION['user'])): ?>
+            <li class="nav-item"><a href="/php quiz/login.php">Login</a> </li>
+          <?php endif; ?>
           </ul>
+       
+
         </div>
       </div>
     </nav>

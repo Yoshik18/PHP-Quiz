@@ -1,5 +1,9 @@
 <?php require("./includes/header.php") ?>
 <?php  
+    if(!isset($_SESSION['user'])){
+       header("Location: index.php");
+    }
+
     if(isset($_POST['add_submit'])){
         $question_number = $_POST['question_number'];
         $correct_answer = $_POST['correct_answer'];

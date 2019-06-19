@@ -1,7 +1,6 @@
 <?php require("./includes/header.php") ?>
 
 <?php
-  session_start();
 
   $number = (int) $_GET['n'];
   //Get Total Questions
